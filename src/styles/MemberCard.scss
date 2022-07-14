@@ -1,0 +1,22 @@
+.cards-group {  
+  display: inline-flex !important;
+  flex-wrap: wrap;
+  // flex-flow: row wrap;
+}
+
+.card {
+  width: 18rem;
+  border-radius: 0.25rem;
+  margin: 8px;
+}
+
+.card-figure {
+  height: 18rem;
+  margin: 0;
+  overflow: hidden;
+}
+
+.card-img {
+  height: fit-content;
+  width: 100%;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Modal = ({ children }) => {
   return (
-    <div className='modal' tabIndex='-1' id="modal" aria-labelledby="modalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div className='modal' tabIndex='-1' id='modal' aria-labelledby='modalLabel' aria-hidden='true' data-bs-backdrop='static' data-bs-keyboard='false'>
       <div className='modal-dialog modal-dialog-centered'>
         <div className='modal-content'>
 

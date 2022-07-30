@@ -42,7 +42,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className='d-flex flex-column align-items-center'>
       <h1>This is the home</h1>
       <div className='cards-group'>
         {members.map(item =>

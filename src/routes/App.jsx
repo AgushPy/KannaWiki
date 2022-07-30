@@ -5,6 +5,7 @@ import AppContext from '@context/AppContext';
 import useInitialState from '@hooks/useInitialState';
 import Home from '@pages/Home';
 import NotFound from '@pages/NotFound';
+import MemberProfile from '@pages/MemberProfile';
 import AdminMembers from '@pages/admin/AdminMembers';
 import '@styles/style.scss';
 
@@ -16,6 +17,10 @@ const App = () => {
 				<Layout>
 					<Routes>
 						<Route index element={<Home />} />
+						{/* MEMBERS */}
+						<Route path='member'>
+							<Route path=':id' element={<MemberProfile />} />
+						</Route>
 						{/* ADMIN */}
 						<Route path='admin'>
 							<Route path='members' element={<AdminMembers />} />

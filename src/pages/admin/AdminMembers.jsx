@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MemberCard from '@components/MemberCard';
+import MemberCardSimplified from '@components/MemberCardSimplified';
 import NewMember from '@components/NewMember';
 import Modal from '@containers/Modal';
 import useCreateMember from '@hooks/useCreateMember';
@@ -44,10 +44,12 @@ const AdminMembers = () => {
   }, []);
 
   return (
-    <div>
+    <div className='d-flex flex-column align-items-center'>
       <h1>Admin Panel - Members</h1>
-      <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#modal">New User</button>
-      <button className='btn btn-primary' onClick={()=>members.map(member => console.log(useCreateMember(member)))}>Preset</button>
+      <div className='btn btn-group'>
+        <button className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#modal'>New User</button>
+        <button className='btn btn-secondary' onClick={()=>members.map(member => console.log(useCreateMember(member)))}>Preset</button></div>
+      
       
       <Modal>
         <NewMember/>
@@ -55,7 +57,7 @@ const AdminMembers = () => {
   
       <div className='cards-group'>
         {members.map(item =>
-          (<MemberCard member={item} key={item.id}/>)
+          (<MemberCardSimplified member={item} key={item.id}/>)
         )}
       </div>
     </div>

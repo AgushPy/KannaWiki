@@ -4,10 +4,10 @@ import Axios from 'axios'
 
 const useCreateMember = async (member: Member) => {
   Axios.post(`${API}/miembro/crear`, member)
-  .then(function (response) {
+  .then((response) => {
     return response;
   })
-  .catch(function (error) {
+  .catch((error) => {
     return error;
   });
 }

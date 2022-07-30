@@ -20,3 +20,26 @@
   height: fit-content;
   width: 100%;
 }
+
+// SIMPLIFIED
+
+.card.card-simplified {
+  flex-direction: row;
+}
+
+.card.card-simplified .card-figure {
+  height: 8rem;
+  width: 8rem;
+}
+
+.card.card-simplified .card-img {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.card.card-simplified .card-body {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

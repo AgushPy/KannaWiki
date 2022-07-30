@@ -11,6 +11,4 @@ import com.kannawiki.serviceImpl.FraseServicioImpl;
 @RequestMapping("/frase")
 @CrossOrigin(origins = "http://localhost")
 public class FraseController {
-	@Autowired
-	private FraseServicioImpl frasesvim;
 }

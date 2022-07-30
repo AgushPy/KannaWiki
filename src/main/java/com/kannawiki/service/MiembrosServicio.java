@@ -1,6 +1,9 @@
 package com.kannawiki.service;
 
+import org.springframework.stereotype.Service;
+
 import com.kannawiki.entidades.Miembro;
+
 
 public interface MiembrosServicio {
 

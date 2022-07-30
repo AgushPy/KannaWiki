@@ -8,7 +8,7 @@ import lombok.NonNull;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository @NonNull
-public interface FraseRepository extends JpaRepository<Frase,Long>{
+@Repository
+public interface FraseRepository extends JpaRepository<Frase,Integer>{
 	
 }

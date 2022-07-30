@@ -1,29 +1,37 @@
 package com.kannawiki.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kannawiki.entidades.Frase;
 import com.kannawiki.entidades.Miembro;
+import com.kannawiki.repository.FraseRepository;
+import com.kannawiki.service.FraseServicio;
+import com.kannawiki.service.MiembrosServicio;
 import com.kannawiki.serviceImpl.FraseServicioImpl;
 import com.kannawiki.serviceImpl.MiembroServicioImpl;
 
 @RestController
 @RequestMapping("/miembro")
-@CrossOrigin(origins = "http://localhost")
+//@CrossOrigin(origins = "http://localhost")
 public class MiembroController {
 	@Autowired
-	private MiembroServicioImpl miembrosvim;
+	private MiembrosServicio miembrosvim;
 	@Autowired
-	private FraseServicioImpl frasesvim;
+	private FraseServicio frasesvim;
+	
 	@GetMapping("/{id}")
 	public Miembro devolverMiembro(@PathVariable(value = "id") int mimebroId){
 		MiembroServicioImpl miembroBuscar = new MiembroServicioImpl();
@@ -35,9 +43,20 @@ public class MiembroController {
 	@PostMapping("/crear")
 	public void crearMiembro(@RequestParam(value = "nameMiembro",defaultValue = "null") String nameMiembro,
 			@RequestParam(value = "usuarioDs",defaultValue = "null") String usuarioDs,
+			@RequestParam(value= "rango",defaultValue = "null") String rango,
 			@RequestParam(value = "cumpleaniosFecha",defaultValue = "null")Date cumpleaniosFecha,
-			@RequestParam(value = "descripcion",defaultValue = "null")String descripcion){
-		List<Frase> frases = frasesvim.listadoFrases(); 
-		
+			@RequestParam(value = "descripcion",defaultValue = "null")String descripcion,
+			@RequestParam(value = "listadoFrase", defaultValue ="null") List<Frase> frases
+			){
+		Miembro miembro = new Miembro(nameMiembro,usuarioDs,rango,cumpleaniosFecha,descripcion,frases);
+		miembrosvim.crearMiembro(miembro);
+	}
+	
+	//esta segunda forma creo que es la correcta para compilar el codigo y entregarlo mediante una rest al sv
+	@PostMapping("/crear/H")
+	public ResponseEntity<String> crearMiembro(@RequestBody Miembro miembro){
+		Miembro miembro1 = miembro;
+		miembrosvim.crearMiembro(miembro1);
+		return new ResponseEntity("Creación correcta",HttpStatus.OK);
 	}
 }

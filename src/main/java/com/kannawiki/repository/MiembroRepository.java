@@ -7,7 +7,7 @@ import com.kannawiki.entidades.Miembro;
 
 import lombok.NonNull;
 
-@Repository @NonNull
-public interface MiembroRepository extends JpaRepository<Miembro, Long>{
+@Repository
+public interface MiembroRepository extends JpaRepository<Miembro, Integer>{
 
 }

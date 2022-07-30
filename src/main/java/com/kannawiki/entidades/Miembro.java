@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -16,22 +17,35 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "miembros")
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class Miembro implements Serializable {
-	private static final long serialVersionUID = 7030071407758955195L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long idMiembro;
+public class Miembro {
 	
+	@Id
+	@GeneratedValue
 	private Integer id;
 	private String name;
 	private String dicord;
+	private String rango;
 	private Date cumpleanios;
 	private String descripcion;
+	@OneToMany
 	private List<Frase> frases;
+	
+	public Miembro() {
+		
+	}
+	
+	public Miembro(String name, String dicord, String rango, Date cumpleanios, String descripcion,
+			List<Frase> frases) {
+		this.name = name;
+		this.dicord = dicord;
+		this.rango = rango;
+		this.cumpleanios = cumpleanios;
+		this.descripcion = descripcion;
+		this.frases = frases;
+	}
 	public int getId() {
 		return id;
 	}
@@ -68,6 +82,13 @@ public class Miembro implements Serializable {
 	public void setFrases(List<Frase> frases) {
 		this.frases = frases;
 	}
+	public String getRango() {
+		return rango;
+	}
+	public void setRango(String rango) {
+		this.rango = rango;
+	}
+	
 	
 	
 }

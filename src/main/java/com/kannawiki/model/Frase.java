@@ -1,4 +1,4 @@
-package com.kannawiki.entidades;
+package com.kannawiki.model;
 
 import java.io.Serializable;
 

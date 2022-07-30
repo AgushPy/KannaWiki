@@ -2,7 +2,7 @@ package com.kannawiki.repository;
 
 import org.springframework.stereotype.Repository;
 
-import com.kannawiki.entidades.Frase;
+import com.kannawiki.model.Frase;
 
 import lombok.NonNull;
 

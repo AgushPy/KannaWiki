@@ -9,6 +9,6 @@ import com.kannawiki.serviceImpl.FraseServicioImpl;
 
 @RestController
 @RequestMapping("/frase")
-@CrossOrigin(origins = "http://localhost")
+@CrossOrigin(origins = "http://localhost:5500")
 public class FraseController {
 }

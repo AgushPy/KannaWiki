@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.kannawiki.entidades.Frase;
+import com.kannawiki.model.Frase;
 
 
 public interface FraseServicio {

@@ -3,7 +3,7 @@ package com.kannawiki.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.kannawiki.entidades.Miembro;
+import com.kannawiki.model.Miembro;
 
 import lombok.NonNull;
 

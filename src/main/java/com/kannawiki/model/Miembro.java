@@ -1,4 +1,4 @@
-package com.kannawiki.entidades;
+package com.kannawiki.model;
 
 import java.io.Serializable;
 import java.util.*;
@@ -26,7 +26,7 @@ public class Miembro {
 	@GeneratedValue
 	private Integer id;
 	private String name;
-	private String dicord;
+	private String discord;
 	private String rango;
 	private Date cumpleanios;
 	private String descripcion;
@@ -37,10 +37,10 @@ public class Miembro {
 		
 	}
 	
-	public Miembro(String name, String dicord, String rango, Date cumpleanios, String descripcion,
+	public Miembro(String name, String discord, String rango, Date cumpleanios, String descripcion,
 			List<Frase> frases) {
 		this.name = name;
-		this.dicord = dicord;
+		this.discord = discord;
 		this.rango = rango;
 		this.cumpleanios = cumpleanios;
 		this.descripcion = descripcion;
@@ -58,11 +58,11 @@ public class Miembro {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDicord() {
-		return dicord;
+	public String getdiscord() {
+		return discord;
 	}
-	public void setDicord(String dicord) {
-		this.dicord = dicord;
+	public void setdiscord(String discord) {
+		this.discord = discord;
 	}
 	public Date getCumpleanios() {
 		return cumpleanios;

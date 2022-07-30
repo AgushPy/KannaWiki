@@ -3,9 +3,10 @@ package com.kannawiki.serviceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kannawiki.entidades.Miembro;
+import com.kannawiki.model.Miembro;
 import com.kannawiki.repository.MiembroRepository;
 import com.kannawiki.service.MiembrosServicio;
+
 @Service
 public class MiembroServicioImpl implements MiembrosServicio {
 

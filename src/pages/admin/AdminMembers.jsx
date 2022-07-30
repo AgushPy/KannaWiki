@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import useGetAllMembers from '@hooks/useGetAllMembers';
 import MemberCard from '@components/MemberCard';
+import NewMember from '@components/NewMember';
+import Modal from '@containers/Modal';
+import useCreateMember from '@hooks/useCreateMember';
 
-const Home = () => {
+const AdminMembers = () => {
   const [members, setMembers] = useState([]);
 
   useEffect(() => {
@@ -43,7 +45,14 @@ const Home = () => {
 
   return (
     <div>
-      <h1>This is the home</h1>
+      <h1>Admin Panel - Members</h1>
+      <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#modal">New User</button>
+      <button className='btn btn-primary' onClick={()=>members.map(member => console.log(useCreateMember(member)))}>Preset</button>
+      
+      <Modal>
+        <NewMember/>
+      </Modal>
+  
       <div className='cards-group'>
         {members.map(item =>
           (<MemberCard member={item} key={item.id}/>)
@@ -53,4 +62,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default AdminMembers;

@@ -12,7 +12,7 @@ module.exports = {
     assetModuleFilename: 'assets/images/[hash][ext][query]',
   },
   mode: 'development',
-  devtool: 'source-map',
+  // devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.ts', '.jsx'],
     alias: {
@@ -81,7 +81,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/[name].[contenthash].css',
     }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     new Dotenv(),
   ],
   watchOptions: {
@@ -90,7 +90,7 @@ module.exports = {
   },
   devServer: {
     static: path.resolve(__dirname, 'dist'),
-    port: 8080,
+    port: 5500,
     open: true,
     compress: true,
     historyApiFallback: true,

@@ -3,3 +3,4 @@ dev-only/
 dist/
 *.jpg
 *.png
+.env

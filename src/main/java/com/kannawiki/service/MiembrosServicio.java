@@ -10,6 +10,6 @@ public interface MiembrosServicio {
 	public void crearMiembro(Miembro miembro);
 	public void editarMiembro(Miembro miembro);
 	public void borrarMiembro(int id);
-	public Miembro devolverMiembro(int id);
+	public Miembro devolverMiembro(Integer id);
 	
 }

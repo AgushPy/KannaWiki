@@ -1,5 +1,7 @@
 package com.kannawiki.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,10 +34,15 @@ public class MiembroServicioImpl implements MiembrosServicio {
 	}
 
 	@Override
-	public Miembro devolverMiembro(int id) {
+	public Miembro devolverMiembro(Integer id) {
 		// TODO Auto-generated method stub
-		Miembro miembro = miembrodb.getById(id);
-		return miembro;
+		List<Miembro> miembros = miembrodb.findAll();
+		for (Miembro miembro : miembros) {
+			if(miembro.getId() == id) {
+				return miembro;
+			}
+		}
+		return null;
 	}
 
 }

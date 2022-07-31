@@ -34,7 +34,8 @@ public class MiembroServicioImpl implements MiembrosServicio {
 	@Override
 	public Miembro devolverMiembro(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		Miembro miembro = miembrodb.getById(id);
+		return miembro;
 	}
 
 }

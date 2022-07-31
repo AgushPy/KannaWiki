@@ -33,10 +33,10 @@ public class MiembroController {
 	private FraseServicio frasesvim;
 	
 	@GetMapping("/{id}")
-	public Miembro devolverMiembro(@PathVariable(value = "id") int mimebroId){
+	public ResponseEntity<Miembro> devolverMiembro(@PathVariable(value = "id") int mimebroId){
 		Miembro miembro= miembrosvim.devolverMiembro(mimebroId);
 		
-		return miembro;
+		return new ResponseEntity<Miembro>(miembro, HttpStatus.OK);
 	}
 	
 	// @PostMapping("/crear")

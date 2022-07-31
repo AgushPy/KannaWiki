@@ -38,6 +38,13 @@ public class MiembroController {
 		
 		return new ResponseEntity<Miembro>(miembro, HttpStatus.OK);
 	}
+
+	@GetMapping("/lista")
+	public ResponseEntity<List<Miembro>> devolverListaMiembros(){
+		List<Miembro> miembros = miembrosvim.devolverListaMiembros();
+		
+		return new ResponseEntity<List<Miembro>>(miembros, HttpStatus.OK);
+	}
 	
 	// @PostMapping("/crear")
 	// public void crearMiembro(@RequestParam(value = "nameMiembro",defaultValue = "null") String nameMiembro,

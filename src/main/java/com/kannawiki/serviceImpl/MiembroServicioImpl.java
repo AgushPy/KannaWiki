@@ -45,4 +45,11 @@ public class MiembroServicioImpl implements MiembrosServicio {
 		return null;
 	}
 
+	@Override
+	public List<Miembro> devolverListaMiembros() {
+		// TODO Auto-generated method stub
+		List<Miembro> miembros = miembrodb.findAll();
+		return miembros;
+	}
+
 }

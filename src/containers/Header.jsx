@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom'
 import '@styles/style.scss';
 import '@styles/Header.scss'
 
 const Header = () => {
+
+  const [isLogged, setIsLogged] = useState(true);
+
   return (
     <header className='header'>
       <h2>KannaVidad Wikia</h2>
@@ -13,8 +16,20 @@ const Header = () => {
             <NavLink to="/" className='nav-link'>Home</NavLink>
           </li>
           
-          <li className='nav-item'>
-            <NavLink to="/admin/members" className='nav-link'>Edit</NavLink>
+          {
+            isLogged && 
+            <li className='nav-item'>
+              <NavLink to="/admin/members" className='nav-link'>Edit</NavLink>
+            </li>
+          }
+
+          <li>
+            {
+              (isLogged)
+              ? <button className='nav-link' onClick={()=>setIsLogged(false)}>Log Out</button>
+              : <button className='nav-link' onClick={()=>setIsLogged(true)}>Log In</button>
+              // : <NavLink to="/login" className='nav-link'>Log In</NavLink>
+            }
           </li>
         </ul>
       </nav>

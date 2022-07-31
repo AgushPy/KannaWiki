@@ -4,10 +4,10 @@ import { Member } from '../models/member.model';
 const useGetAllMembers = async () => {
   let members: Member[] = [];
 
-  const allMembers = `${API}/miembro/lista`;
-  await fetch(allMembers)
+  const api = `${API}/miembro/lista`;
+  await fetch(api)
   .then(resp => resp.json())
-  .then(resp => { if(resp) members.push(resp) })
+  .then(resp => members = resp)
   .catch(e => console.error(e));
 
   return members;

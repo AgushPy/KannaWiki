@@ -1,5 +1,6 @@
 import React from 'react';
 import '@styles/MemberCard.scss';
+import useGetMemberById from '@hooks/useGetMemberById';
 
 const MemberCardSimplified = ({member}) => {
   return (
@@ -10,7 +11,8 @@ const MemberCardSimplified = ({member}) => {
       <div className='card-body'>
         <h5 className='card-title'>{member.discord}</h5>
         <div>
-          <a href='#' className='btn btn-primary mx-auto'>View Profile</a>
+          <button className='btn btn-primary mx-auto' onClick={()=>useGetMemberById(member.id).then(resp => console.log(resp))}>View Profile</button>
+          {/* <a href='#' className='btn btn-primary mx-auto'>View Profile</a> */}
         </div>
       </div>
     </div>

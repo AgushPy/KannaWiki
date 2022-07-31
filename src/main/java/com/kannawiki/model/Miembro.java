@@ -27,67 +27,26 @@ public class Miembro {
 	private Integer id;
 	private String name;
 	private String discord;
-	private String rango;
-	private Date cumpleanios;
-	private String descripcion;
+	private String title;
+	private Date birthday;
+	private String description;
 	@OneToMany
-	private List<Frase> frases;
+	private List<Frase> phrases;
 	
 	public Miembro() {
 		
 	}
 	
-	public Miembro(String name, String discord, String rango, Date cumpleanios, String descripcion,
-			List<Frase> frases) {
+	public Miembro(String name, String discord, String title, Date birthday, String description,
+			List<Frase> phrases) {
 		this.name = name;
 		this.discord = discord;
-		this.rango = rango;
-		this.cumpleanios = cumpleanios;
-		this.descripcion = descripcion;
-		this.frases = frases;
+		this.title = title;
+		this.birthday = birthday;
+		this.description = description;
+		this.phrases = phrases;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getdiscord() {
-		return discord;
-	}
-	public void setdiscord(String discord) {
-		this.discord = discord;
-	}
-	public Date getCumpleanios() {
-		return cumpleanios;
-	}
-	public void setCumpleanios(Date cumpleanios) {
-		this.cumpleanios = cumpleanios;
-	}
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-	public List<Frase> getFrases() {
-		return frases;
-	}
-	public void setFrases(List<Frase> frases) {
-		this.frases = frases;
-	}
-	public String getRango() {
-		return rango;
-	}
-	public void setRango(String rango) {
-		this.rango = rango;
-	}
+	
 	
 	
 	

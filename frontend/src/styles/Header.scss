@@ -1,0 +1,21 @@
+@import '@styles/_vars.scss';
+@font-face{font-family:AndyBold;src:url(https://images.wikia.nocookie.net/terraria/es/images/1/16/Andy_Bold.ttf)}
+
+.header {
+  background-color: $color-background-2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 0 60px;
+  margin-bottom: 24px;
+}
+
+.header > h2 {
+  padding-top: 8px;
+  font-family: AndyBold,helvetica,arial,sans-serif;
+}
+
+.nav-pills .nav-link {
+  font-weight: 500;
+}

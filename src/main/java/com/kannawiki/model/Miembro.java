@@ -26,25 +26,31 @@ public class Miembro {
 	@GeneratedValue
 	private Integer id;
 	private String name;
+	private String username;
 	private String discord;
 	private String title;
 	private Date birthday;
 	private String description;
 	@OneToMany
 	private List<Frase> phrases;
+	private String img;
+	private String nationality;
 	
 	public Miembro() {
 		
 	}
 	
-	public Miembro(String name, String discord, String title, Date birthday, String description,
-			List<Frase> phrases) {
+	public Miembro(String name, String username, String discord, String title, Date birthday, String description,
+			List<Frase> phrases, String img, String nationality) {
 		this.name = name;
+		this.username = username;
 		this.discord = discord;
 		this.title = title;
 		this.birthday = birthday;
 		this.description = description;
 		this.phrases = phrases;
+		this.img = img;
+		this.nationality = nationality;
 	}
 
 	public Integer getId() {
@@ -61,6 +67,14 @@ public class Miembro {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getDiscord() {
@@ -101,6 +115,22 @@ public class Miembro {
 
 	public void setPhrases(List<Frase> phrases) {
 		this.phrases = phrases;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
 	}
 	
 	
